@@ -1,0 +1,13 @@
+diff -purN vim-fugitive-2.5/Makefile vim-fugitive-2.5.new/Makefile
+--- vim-fugitive-2.5/Makefile	1970-01-01 00:00:00.000000000 +0000
++++ vim-fugitive-2.5/Makefile	2019-01-17 01:51:36.931479708 +0000
+@@ -0,0 +1,8 @@
++all: none
++
++none:
++	echo No build
++	
++install:
++	mkdir -p $(DESTDIR)/usr/share/vim/vim81/
++	cp -a autoload ftdetect plugin $(DESTDIR)/usr/share/vim/vim81/
+\ No newline at end of file
