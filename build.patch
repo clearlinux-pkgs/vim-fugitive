@@ -8,6 +8,6 @@ diff -purN vim-fugitive-2.5/Makefile vim-fugitive-2.5.new/Makefile
 +	echo No build
 +	
 +install:
-+	mkdir -p $(DESTDIR)/usr/share/vim/vim81/
-+	cp -a autoload ftdetect plugin $(DESTDIR)/usr/share/vim/vim81/
++	mkdir -p $(DESTDIR)/usr/share/vim/vim82/
++	cp -a autoload ftdetect plugin $(DESTDIR)/usr/share/vim/vim82/
 \ No newline at end of file

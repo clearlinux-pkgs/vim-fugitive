@@ -4,10 +4,10 @@
 #
 Name     : vim-fugitive
 Version  : 3.1
-Release  : 3
+Release  : 4
 URL      : https://github.com/tpope/vim-fugitive/archive/v3.1/vim-fugitive-3.1.tar.gz
 Source0  : https://github.com/tpope/vim-fugitive/archive/v3.1/vim-fugitive-3.1.tar.gz
-Summary  : Git wrapper so awesome, it should be illegal
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Vim
 Requires: vim-fugitive-data = %{version}-%{release}
@@ -26,6 +26,7 @@ data components for the vim-fugitive package.
 
 %prep
 %setup -q -n vim-fugitive-3.1
+cd %{_builddir}/vim-fugitive-3.1
 %patch1 -p1
 
 %build
@@ -33,8 +34,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570786039
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1576633221
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -47,7 +47,7 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1570786039
+export SOURCE_DATE_EPOCH=1576633221
 rm -rf %{buildroot}
 %make_install
 
@@ -56,6 +56,6 @@ rm -rf %{buildroot}
 
 %files data
 %defattr(-,root,root,-)
-/usr/share/vim/vim81/autoload/fugitive.vim
-/usr/share/vim/vim81/ftdetect/fugitive.vim
-/usr/share/vim/vim81/plugin/fugitive.vim
+/usr/share/vim/vim82/autoload/fugitive.vim
+/usr/share/vim/vim82/ftdetect/fugitive.vim
+/usr/share/vim/vim82/plugin/fugitive.vim
