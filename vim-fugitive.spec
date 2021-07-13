@@ -4,7 +4,7 @@
 #
 Name     : vim-fugitive
 Version  : 3.3
-Release  : 6
+Release  : 7
 URL      : https://github.com/tpope/vim-fugitive/archive/v3.3/vim-fugitive-3.3.tar.gz
 Source0  : https://github.com/tpope/vim-fugitive/archive/v3.3/vim-fugitive-3.3.tar.gz
 Summary  : No detailed summary available
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : Vim
 Requires: vim-fugitive-data = %{version}-%{release}
 Patch1: build.patch
+Patch2: 0001-Remove-unnecessary-complete-on-command-with-no-argum.patch
 
 %description
 No detailed description available
@@ -28,13 +29,14 @@ data components for the vim-fugitive package.
 %setup -q -n vim-fugitive-3.3
 cd %{_builddir}/vim-fugitive-3.3
 %patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1618509222
+export SOURCE_DATE_EPOCH=1626196142
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -47,7 +49,7 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1618509222
+export SOURCE_DATE_EPOCH=1626196142
 rm -rf %{buildroot}
 %make_install
 
